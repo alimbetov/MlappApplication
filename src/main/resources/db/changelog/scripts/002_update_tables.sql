@@ -1,0 +1,16 @@
+--liquibase formatted sql
+
+-- changeset ARM:insert-roles
+--liquibase formatted sql
+
+-- changeset ARM:update-roles001
+INSERT INTO roles (name)
+SELECT 'ROLE_USER' WHERE NOT EXISTS (SELECT 1 FROM roles WHERE name = 'ROLE_USER');
+INSERT INTO roles (name)
+SELECT 'ROLE_ADMIN' WHERE NOT EXISTS (SELECT 1 FROM roles WHERE name = 'ROLE_ADMIN');
+INSERT INTO roles (name)
+SELECT 'ROLE_ANATATOR' WHERE NOT EXISTS (SELECT 1 FROM roles WHERE name = 'ROLE_ANATATOR');
+INSERT INTO roles (name)
+SELECT 'ROLE_INSPECTOR' WHERE NOT EXISTS (SELECT 1 FROM roles WHERE name = 'ROLE_INSPECTOR');
+INSERT INTO roles (name)
+SELECT 'ROLE_MODERATOR' WHERE NOT EXISTS (SELECT 1 FROM roles WHERE name = 'ROLE_MODERATOR');

@@ -1,0 +1,11 @@
+SuperCategory superCategory = new SuperCategory();
+superCategory.setName("Technology");
+superCategory.setDirection("IT");
+
+// Создаем категорию и привязываем ее к суперкатегории
+Category category = new Category();
+category.setName("Artificial Intelligence");
+category.setSuperCategory(superCategory);
+
+// Сохраняем суперкатегорию (автоматически сохранится и категория)
+superCategoryRepository.save(superCategory);
